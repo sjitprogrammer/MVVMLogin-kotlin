@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.mvvmlogin.R
 import com.example.mvvmlogin.auth.data.LoginListener
 import com.example.mvvmlogin.databinding.ActivityLoginBinding
+import com.example.mvvmlogin.util.Toast
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(),LoginListener {
@@ -28,10 +29,11 @@ class LoginActivity : AppCompatActivity(),LoginListener {
     }
 
     override fun onSuccess() {
-        Toast.makeText(this,"login success",Toast.LENGTH_LONG).show()
+        Toast("login success")
+//        Toast.makeText(this,"login success",Toast.LENGTH_LONG).show()
     }
 
     override fun onFailure(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+        Toast(message)
     }
 }

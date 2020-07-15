@@ -19,6 +19,12 @@ class LoginViewModel : ViewModel() {
     fun clickLogIn() {
         Log.e(TAG,"clickLogIn : "+username.value)
 
+            if (username.value.isNullOrEmpty() || password.value.isNullOrEmpty()) {
+                Log.e(TAG,"Please enter username or password!")
+                loginListener?.onFailure("Please enter username or password!")
+                return
+            }
+
             MyApi.retrofitService.userLogin(username.value.toString(),password.value.toString()).enqueue(object :Callback<LoginResponse>{
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.e(TAG,"error : "+t)
@@ -29,9 +35,10 @@ class LoginViewModel : ViewModel() {
                     response: Response<LoginResponse>
                 ) {
                     Log.e(TAG,response.body().toString())
+                    loginListener?.onSuccess()
                 }
             })
-        loginListener?.onSuccess()
+
 
     }
 }
