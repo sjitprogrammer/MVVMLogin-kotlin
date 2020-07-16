@@ -1,6 +1,11 @@
 # MVVMLogin-kotlin
 
-<img src="https://github.com/sjitprogrammer/MVVMLogin-kotlin/blob/master/image/60000.gif" width="300">
+Android app User UI SignIn and SignUp with Kotlin MVVM architecture
+
+use library
+- ViewModel and LiveData
+- retrofit2
+- moshi
 
 </br>
 <img src="https://github.com/sjitprogrammer/MVVMLogin-kotlin/blob/master/image/59761.jpg" width="300">
