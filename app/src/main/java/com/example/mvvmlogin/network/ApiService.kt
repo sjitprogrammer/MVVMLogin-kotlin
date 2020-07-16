@@ -38,8 +38,8 @@ interface ApiService {
     @Headers("Content-Type:application/json")
     @POST("api/user/register")
     fun userRegister(
-        @Query("username") username: String,
-        @Query("password") password: String,
+        @Query("userName") username: String,
+        @Query("passWord") password: String,
         @Query("email") email: String
     ):Call<LoginResponse>
 }

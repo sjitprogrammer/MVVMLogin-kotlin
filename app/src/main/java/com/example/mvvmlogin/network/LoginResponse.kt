@@ -1,3 +1,3 @@
 package com.example.mvvmlogin.network
 
-data class LoginResponse(val status:Boolean,val msg:String)
+data class LoginResponse(val status: Boolean, val msg: String, val user: User?=null)
